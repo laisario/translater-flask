@@ -18,16 +18,15 @@ def index():
     translate_from = request.form.get('translate-from') or 'pt'
     translate_to = request.form.get('translate-to') or 'en'
     translated = 'Tradução'
-    languages= LanguageModel.list_dicts()
-    return languages
-    # return render_template(
-    #     "index.html",
-    #     languages=languages,
-    #     text_to_translate=text_to_translate,
-    #     translate_from=translate_from,
-    #     translate_to=translate_to,
-    #     translated=translated
-    # )
+    languages = LanguageModel.list_dicts()
+    return render_template(
+        "index.html",
+        languages=languages,
+        text_to_translate=text_to_translate,
+        translate_from=translate_from,
+        translate_to=translate_to,
+        translated=translated
+    )
 
 
 # Req. 6
