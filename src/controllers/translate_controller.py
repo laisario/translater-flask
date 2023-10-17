@@ -31,7 +31,7 @@ def index():
         history.save()
     else:
         translated = 'Tradução'
-        
+
     return render_template(
         "index.html",
         languages=languages,
